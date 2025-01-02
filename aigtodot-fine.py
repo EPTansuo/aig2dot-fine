@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import pygraphviz as pgv
 import argparse
 import os
@@ -66,7 +68,7 @@ for node in list(graph.nodes()):
 
 and_node = 1
 for node in graph.nodes():
-    print(node.name)
+    #print(node.name)
     if node.name.startswith("I") or node.name.startswith("O"):  # Change attribute of nodes
         node.attr.update(shape="box", color="black")
     else: 
@@ -94,3 +96,6 @@ graph.graph_attr["rankdir"] = "LR"
 
 graph.write(output_dot_file)
 
+
+graph.close()
+reversed_graph.close()
